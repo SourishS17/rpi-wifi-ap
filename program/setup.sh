@@ -1,5 +1,9 @@
 #!/bin/bash
 setup_path="$(pwd)"
+echo "------->0. Installing dependencies..."
+sudo apt-get update
+sudo apt-get install -y hostapd dnsmasq nodejs npm
+
 echo "------->1. Stop auto service"
 # don't  let it done  auto
 # stop  current running instance
@@ -13,7 +17,7 @@ sudo systemctl disable hostapd
 sudo killall dnsmasq
 sudo killall hostapd
 #############################################
-echo "------->2. Install Flashpage as  the service"
+echo "------->2. Install Flashpage as the service"
 
 flashpage_path="$setup_path/CaptivePortal"
 cd $flashpage_path
@@ -30,7 +34,7 @@ cd  $setup_path
 sudo cp -f ./config_ap/captiveportal.service /etc/systemd/system/captiveportal.service
 
 #############################################
-echo "------->3. Setup autohotspot service run once  at pwr on"
+echo "------->3. Setup autohotspot service run once at power on"
 #create startup executables
 sudo bash -c 'cat > /usr/bin/autohotspot.sh' << EOF
 #!/bin/bash
@@ -47,7 +51,9 @@ sudo cp -f ./config_ap/autohotspot.service /etc/systemd/system/autohotspot.servi
 #default wifi client configuration
 sudo cp -f ./config_ap/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
 
-echo "------->4. Enable  service"
+echo "------->4. Enable service"
 
 sudo systemctl enable autohotspot.service
 sudo systemctl enable captiveportal.service
+
+echo "done setup"
