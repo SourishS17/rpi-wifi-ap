@@ -18,7 +18,7 @@ function factory_wpa_supplicant(ssid = 'SSID_wifi', pass = 'qwertyuiop') {
   let network = `
   ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
   update_config=1
-  country=US
+  country=GB
 
   network={
     ssid="${ssid}"
