@@ -78,4 +78,4 @@ module.exports.update_wpa_supplicant = update_wpa_supplicant;
 module.exports.factory_wpa_supplicant = factory_wpa_supplicant;
 module.exports.software_reboot = software_reboot;
 module.exports.scan_wifi = scan_wifi;
-module.exports.stop_otbr_web = stop_otbr_web;
+//module.exports.stop_otbr_web = stop_otbr_web;
