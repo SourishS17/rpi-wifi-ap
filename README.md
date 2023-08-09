@@ -11,11 +11,11 @@ Then, reboot or shutdown before use.
 
 
 ### Usage
-- Within 3 minutes of boot, if no WiFi is connected, an AP will appear (RPi-Cofigure-WiFi)
-- Connect to it with any device
-- A webpage should pop up (if not, try browsing the internet to force it to pop up)
-- Enter the desired WiFi credentials (**ensure they are correct**) and click the button
-- The Pi will now reboot and use these credentials.
+1) Within 3 minutes of boot, if no WiFi is connected, an AP will appear (RPi-Cofigure-WiFi)
+2) Connect to it with any device
+3) A webpage should pop up (if not, try browsing the internet to force it to pop up)
+4) Enter the desired WiFi credentials (**ensure they are correct**) and click the button
+5) The Pi will now reboot and use these credentials.
 
 
 ### Dependencies 
