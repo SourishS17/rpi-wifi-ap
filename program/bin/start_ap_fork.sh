@@ -50,6 +50,8 @@ echo "2.start AP"
 #  start subshell to  fork thread http://tldp.org/LDP/abs/html/subshells.html 
 #  Running parallel processes in subshells by using &
 start_hostapd & # fork this process and run parallel
+sudo systemctl stop otbr-web
+sudo systemctl start captiveportal
 sleep 60
 echo "start dnsmag=====>"
 start_dnsmasq # fork this process and run parallel
