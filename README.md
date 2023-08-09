@@ -27,11 +27,7 @@ The following packages are installed by `setup.sh`:
 - npm
 
 ### Testing
-If you want to test this:
-1) First follow the installation commands above
-2) Edit `/etc/wpa_supplicant/wpa_supplicant.conf` and delete the section which contains your WiFi credentials
-3) Reboot. The RPi should fail to connect to WiFi and thus launch an AP
-
-Debugging command:
+run script:
 ```sudo /usr/bin/autohotspot.sh```
+
 
