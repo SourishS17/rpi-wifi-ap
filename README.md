@@ -16,3 +16,11 @@ Then, reboot or shutdown before use.
 - A webpage should pop up (if not, try browsing the internet to force it to pop up)
 - Enter the desired WiFi credentials (**ensure they are correct**) and click the button
 - The Pi will now reboot and use these credentials.
+
+
+### Dependencies 
+The following packages are installed by `setup.sh`:
+- hostapd
+- dnsmasq
+- nodejs
+- npm
