@@ -28,6 +28,6 @@ The following packages are installed by `setup.sh`:
 
 ### Testing
 If you want to test this:
-- First follow the installation commands above
-- Edit `/etc/wpa_supplicant/wpa_supplicant.conf' and delete the section which contains your WiFi credentials
-- Reboot. The RPi should fail to connect to WiFi and thus launch an AP
+1) First follow the installation commands above
+2) Edit `/etc/wpa_supplicant/wpa_supplicant.conf` and delete the section which contains your WiFi credentials
+3) Reboot. The RPi should fail to connect to WiFi and thus launch an AP
