@@ -43,6 +43,21 @@ function software_reboot() {
   })
 }
 
+function stop_otbr_web() {
+  return new Promise((resolved, reject) => {
+  
+    let cmd = `sudo systemctl stop otbr-web`;
+    console.log(cmd);
+    os_cmd.exec(cmd, function (error, stdout, stderr) {
+      if (error) {
+        reject(stderr);
+      } else {
+        resolved(stdout);
+      }
+    });
+  })
+}
+
 function scan_wifi() {
   return new Promise((resolved, reject) => {
     let cmd = `sudo iw wlan0 scan | egrep 'SSID|signal'`;
