@@ -1,4 +1,4 @@
-const { update_wpa_supplicant, factory_wpa_supplicant, software_reboot, scan_wifi } = require('./utils');
+const { update_wpa_supplicant, factory_wpa_supplicant, software_reboot, scan_wifi, stop_otbr_web } = require('./utils');
 const http_port = 80;
 const dev_usrname = "admin";
 const dev_password = "admin@123";
@@ -6,6 +6,8 @@ const host = "0.0.0.0";
 const express = require('express');
 const bodyParser = require("body-parser");
 let app = express();
+
+stop_otbr_web()
 
 app.use(express.static(__dirname + '/web'));// the root path to web  folder
 //app.use('/',express.static(__dirname + '/web'));
