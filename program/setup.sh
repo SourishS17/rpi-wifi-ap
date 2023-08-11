@@ -54,6 +54,7 @@ sudo cp -f ./config_ap/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.co
 echo "------->4. Enable service"
 
 sudo systemctl enable autohotspot.service
+if systemctl is-enabled captiveportal  &> /dev/null; then sudo systemctl disable captiveportal; fi
 #sudo systemctl enable captiveportal.service
 
 echo "done setup"
