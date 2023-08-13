@@ -28,9 +28,12 @@ check_wifi_connect_at_pwr_on_then_start_ap(){
 
     if [ $wifi_cnt -gt $max_count ]
     then
-        echo "no wifi at start up. Start AP"
-        # & ==> fork to new process to run AP
-        sudo ./start_ap_fork.sh &
+        if [lsusb | grep -q "OpenThread"]
+        then
+            echo "no wifi at start up. Start AP"
+            # & ==> fork to new process to run AP
+            sudo ./start_ap_fork.sh &
+        fi
     fi
 }
 
