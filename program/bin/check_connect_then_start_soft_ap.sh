@@ -8,7 +8,13 @@ check_wifi_connect_at_pwr_on_then_start_ap(){
     do
         wifi_cnt=$((wifi_cnt + 1))
         echo "check connection count " $wifi_cnt
-       
+
+        if nc -zw1 google.com 443
+        then
+            echo "connection available"
+        fi
+
+        :: '
         if wpa_cli -i $wifidev status | grep ssid
         then
             
@@ -19,6 +25,7 @@ check_wifi_connect_at_pwr_on_then_start_ap(){
             else
                 echo "wifi connect  and having no  IP"
             fi 
+        '
         
         else
             wpa_cli -i $wifidev status | grep wpa_state
