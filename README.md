@@ -11,7 +11,7 @@ Then, reboot or shutdown before use.
 
 
 ### Usage
-1) If the RPi isn't connected to WiFi 90 seconds after boot, an AP will appear (RPi-Configure-WiFi)
+1) If the RPi isn't connected to the internet 90 seconds after boot, an AP will appear (RPi-Configure-WiFi)
 2) Wait ~60 seconds before connecting to the AP
 3) Connect to it with any device
 4) A webpage should pop up (if not, try browsing the internet to force it to pop up)
