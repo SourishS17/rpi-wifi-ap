@@ -12,20 +12,19 @@ check_wifi_connect_at_pwr_on_then_start_ap(){
         if nc -zw1 google.com 443
         then
             echo "connection available"
-        fi
+            break
 
-        :: '
-        if wpa_cli -i $wifidev status | grep ssid
-        then
-            
-            if wpa_cli -i $wifidev status | grep ip_address
-            then
-                echo "wifi connect and having  IP"
-                break
-            else
-                echo "wifi connect  and having no  IP"
-            fi 
-        '
+        
+        #if wpa_cli -i $wifidev status | grep ssid
+        #then
+        #    
+        #    if wpa_cli -i $wifidev status | grep ip_address
+        #    then
+        #        echo "wifi connect and having  IP"
+        #        break
+        #    else
+        #        echo "wifi connect  and having no  IP"
+        #    fi
         
         else
             wpa_cli -i $wifidev status | grep wpa_state
